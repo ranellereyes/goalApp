@@ -10,21 +10,3 @@ export const receiveTodo = (todo) => ({
   type: RECEIVE_TODO,
   todo
 });
-/*
-
-store = {
-  todos: {
-    '1': {
-      id:
-    },
-    '2': {
-
-  }
-  }
-
-  peanuts: {
-
-  }
-}
-
-*/
