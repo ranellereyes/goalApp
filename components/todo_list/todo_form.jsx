@@ -1,5 +1,5 @@
 import React from 'react';
-import Util from '../../util';
+import Util from '../../util/util';
 
 
 class TodoForm extends React.Component {
@@ -26,23 +26,17 @@ class TodoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const date = Util.date();
-    this.props.receiveTodo({
-      id: date,
-      title: this.state.title,
-      body: this.state.body,
-      done: false
-    });
-
-    this.setState({
-      title: '',
-      body: ''
-    });
+    this.props.createTodo({title: this.state.title, body: this.state.body})
+      .then(() => this.setState({title: '', body: ''}));
   }
 
   render() {
+    const errors = this.props.errors;
+
     return (
       <form>
+        {errors.length > 0 ? errors.map((error, i) => <li key={i}>{error}</li>) : ''}
+
         <label>Title</label>
         <input
           id='title'

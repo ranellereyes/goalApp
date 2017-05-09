@@ -1,5 +1,5 @@
 import React from 'react';
-import Util from '../../util';
+import Util from '../../util/util';
 
 class StepForm extends React.Component {
   constructor(props) {
