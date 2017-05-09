@@ -5,7 +5,7 @@ import { stepsByTodoId } from "../../reducers/selectors";
 
 const mapStateToProps = (state, id) => ({
   steps: stepsByTodoId(state, id),
-  todo_id: id
+  todoId: id
 });
 
 const mapDispatchToProps = dispatch => ({

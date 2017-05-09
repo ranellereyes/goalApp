@@ -24,7 +24,7 @@ class StepForm extends React.Component {
       id: Util.date(),
       title: this.state.title,
       done: false,
-      todo_id: this.props.todo_id
+      todoId: this.props.todoId.id
     });
     this.setState({title: ''});
   }
@@ -42,3 +42,5 @@ class StepForm extends React.Component {
     );
   }
 }
+
+export default StepForm;
